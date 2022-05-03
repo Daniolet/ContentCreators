@@ -17,18 +17,15 @@ import { useAuthContext } from "../../providers/AuthProvider";
 import { useEffect, useState } from "react";
 import { config } from "../../config";
 import fullLogo from "../../assets/FullLogo.png";
-import catLogo from "../../assets/cat.png";
-import spookedLogo from "../../assets/spooked.png";
-import rubyLogo from "../../assets/ruby.png";
-import handyLogo from "../../assets/handy.png";
+import handlyIcon from "../../assets/handly.png";
 
 const CardWrapper = styled(Card)(({ theme }) => ({
   backgroundColor: "transparent",
-  marginLeft: "5%",
+  marginLeft: "2.5%",
   border: "3px solid white",
-  width: "50%",
-  padding: "1% 3%",
-  [theme.breakpoints.down("sm")]: {
+  width: "100%",
+  padding: "1% 1%",
+  [theme.breakpoints.down("md")]: {
     margin: "1% auto",
     width: "90%",
   },
@@ -49,22 +46,29 @@ const TextWrapper = styled("div")(({ theme }) => ({
 
 const otherForks = [
   {
-    img: rubyLogo,
-    depositFee: 8,
-    referralFee: 12,
-    totalFee: 20,
+    color: "black",
+    text1: "36 HOURS REWARDS",
+    text2: "ACCUMULATION CUT-OFF",
   },
   {
-    img: catLogo,
-    depositFee: 1,
-    referralFee: 12,
-    totalFee: 13,
+    color: "white",
+    text1: "13 HOURS COMPOUND",
+    text2: "TIMER",
   },
   {
-    img: spookedLogo,
-    depositFee: 2,
-    referralFee: 12,
-    totalFee: 14,
+    color: "black",
+    text1: "8 TIMES MANDATORY",
+    text2: "COMPOUND",
+  },
+  {
+    color: "white",
+    text1: "90% TAX FOR EARLY",
+    text2: "WITHDRAWALS",
+  },
+  {
+    color: "black",
+    text1: "6% TAX FOR SMART",
+    text2: "CONTRACT",
   },
 ];
 
@@ -73,9 +77,9 @@ export default function CompareForks() {
     <CardWrapper>
       {/* <CardContent> */}
         <TextWrapper>
-          <Typography variant="body3">WE ARE OBVIOUSLY THE MOST SUSTANABLE IF YOU COMPARE US TO OTHER BAKEDBEANS FORKS</Typography>
+          <Typography variant="body1" color="green" style={{textDecoration: "underline"}}>HYBRID FEATURES</Typography>
         </TextWrapper>
-        <Grid
+        {/* <Grid
           container
           // justifyContent="space-between"
           alignItems="center"
@@ -83,31 +87,32 @@ export default function CompareForks() {
         >
           <img src={fullLogo} alt="" width={"30%"}></img>
           <TextWrapper>
-            <Typography variant="body6">DEPOSIT FEE 4%</Typography>
-            <Typography variant="body6">REFERRAL FEE 7%</Typography>
+            <Typography variant="body6">36 HOURS REWARDS</Typography>
+            <Typography variant="body6">ACCUMULATION CUT-OFF</Typography>
           </TextWrapper>
-          <Typography variant="body4" marginLeft="10%">=11%</Typography>
         </Grid>
         <Grid display="flex" justifyContent="center" alignItems="center">
           <Typography variant="body1" color="red">OTHERS</Typography>
           <img src={handyLogo} alt="" height="20px"></img>
-        </Grid>
+        </Grid> */}
         {otherForks.map((f) => (
           <Grid
             container
-            // justifyContent="space-between"
+            justifyContent="flex-start"
             alignItems="center"
             mt={1}
           >
-            <img src={f.img} alt="" width="30%"></img>
+            <img src={handlyIcon} alt="" width="48px" style={{marginRight: "24px"}}></img>
+            {/* <Typography variant="body1" color="green">{"☞"}</Typography>
+            <space></space> */}
             <TextWrapper>
-              <Typography variant="body6">DEPOSIT FEE {f.depositFee}%</Typography>
-              <Typography variant="body6" marginLeft={1}>REFERRAL FEE {f.referralFee}%</Typography>
+              <Typography variant="body8" color={f.color}>{f.text1}</Typography>
+              <Typography variant="body8" color={f.color}>{f.text2}</Typography>
             </TextWrapper>
-            <Typography variant="body5" marginLeft="10%">={f.totalFee}%</Typography>
+            {/* <Typography variant="body5" marginLeft="5%">={f.totalFee}%</Typography> */}
           </Grid>
         ))}
-        <Typography fontSize={10} textAlign="center" mt={1}>ALL WE DID IS TO GIVE MORE TO INVESTORS AND TO SUSTAIN THE PLATFORM, WHICH IS AS IT SHOULD BE RIGHT?</Typography>
+        {/* <Typography fontSize={10} textAlign="center" mt={1}>ALL WE DID IS TO GIVE MORE TO INVESTORS AND TO SUSTAIN THE PLATFORM, WHICH IS AS IT SHOULD BE RIGHT?</Typography> */}
       {/* </CardContent> */}
     </CardWrapper>
   );

@@ -13,40 +13,34 @@ const CardWrapper = styled(Card)(({ theme }) => ({
   marginLeft: "5%",
   marginTop: "2%",
   border: "3px solid white",
-  width: "40%",
-  [theme.breakpoints.down("sm")]: {
+  width: "37%",
+  paddingRight: "0",
+  [theme.breakpoints.down("md")]: {
     margin: "1% auto",
     width: "90%",
   },
 }));
-
-const nutritionFacts = [
-  {
-    label: "Daily ROI:",
-    value: "11%",
-    logo: RoiLogo,
-  },
-  {
-    label: "DEV/MARKETING FEE 4%",
-    value: "= 4%",
-    logo: FeeLogo,
-  },
-];
 
 export default function NutritionFacts() {
   return (
     <CardWrapper>
       <CardContent>
         <Box marginLeft={-2} marginRight={-2}>
-          {nutritionFacts.map((f) => (
-            <Grid container key={f.label} alignItems="center">
-              <img src={f.logo} alt="" height={30}></img>
-              <Typography variant="body7">
-                {f.label}
-              </Typography>
-              <Typography variant="body7" marginLeft="10%">{f.value}</Typography>
-            </Grid>
-          ))}
+          <Grid container alignItems="center" display="flex">
+            <img src={RoiLogo} alt="" height={30}></img>
+            <Typography variant="body7" width={"60%"}>
+              Daily ROI:<br/>
+            </Typography>
+            <Typography variant="body7">11%</Typography>
+          </Grid>
+          <Grid container alignItems="center" display="flex">
+            <img src={FeeLogo} alt="" height={30}></img>
+            <Typography variant="body6" width={"80%"}>
+              *DEP.FEE: 5% (5% FOR DEV./MAR.)<br/>
+              *WITHD.FEE: 10% (4% FOR DEV./MAR.<br/>
+              AND 6% FOR SMART CONTRACT)
+            </Typography>
+          </Grid>
         </Box>
       </CardContent>
     </CardWrapper>

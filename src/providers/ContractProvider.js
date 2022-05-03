@@ -51,7 +51,7 @@ export const ContractProvider = ({ children }) => {
   const getBusdBalance = (address) => busdcontract.methods.balanceOf(address).call();
   const getBusdApproved = (address) => busdcontract.methods.allowance(address,config.contractAddress).call();
   const fromWei = (wei, unit = "ether") =>
-    parseFloat(Web3.utils.fromWei(wei, unit)).toFixed(3);
+    parseFloat(Web3.utils.fromWei(wei, unit)).toFixed(2);
   const toWei = (amount, unit = "ether") => Web3.utils.toWei(amount, unit);
 
   return (

@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 const BnbInput = styled("input")({
   variant: "body6",
-  padding: "1px 80% 1px 1px",
+  padding: "1px 50% 1px 1px",
   textAlign: "right",
   borderRadius: 3,
   border: "1px solid #000",
@@ -40,7 +40,7 @@ export default function PriceInput({ value, max, onChange = () => {} }) {
       <Typography
         variant="body6"
         position="absolute"
-        right="63%"
+        right="30%"
       >
         BUSD
       </Typography>

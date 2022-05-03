@@ -8,7 +8,7 @@ import { styled } from "@mui/system";
 
 const CardWrapper = styled(Card)({
   backgroundColor: "transparent",
-  // marginTop: "1%",
+  marginLeft: "2.5%",
   padding: "1%",
   border: "3px solid white",
   height: "10%",
@@ -31,7 +31,7 @@ const HorizontalBlockWrapper = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "row",
   justifyContent: "center",
-  [theme.breakpoints.down("sm")]: {
+  [theme.breakpoints.down("md")]: {
     maxWidth: "100%",
   },
 }));

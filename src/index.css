@@ -20,3 +20,9 @@ code {
 a {
   text-decoration: none;
 }
+
+@media only screen and (max-width: 899px) {
+  .typo-note {
+    width: 100% !important;
+  }
+}

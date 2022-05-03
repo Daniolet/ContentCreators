@@ -3,7 +3,7 @@ import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-
+import Button from "@mui/material/Button";
 import { styled } from "@mui/system";
 
 import Web3 from "web3";
@@ -21,8 +21,8 @@ const CardWrapper = styled(Card)(({ theme }) => ({
   marginRight: "5%",
   marginTop: "2%",
   border: "3px solid white",
-  width: "40%",
-  [theme.breakpoints.down("sm")]: {
+  width: "37%",
+  [theme.breakpoints.down("md")]: {
     margin: "1% auto",
     width: "90%",
   },
@@ -70,16 +70,20 @@ export default function ContractInfo() {
           >
             <img src={contractLogo} alt="" height={30}></img>
             <Typography variant="body7">CONTRACT BALANCE:</Typography>
-            <Typography variant="body7" marginLeft="20%">{contractBUSD} BUSD</Typography>
           </Grid>
+
+          <Grid container justifyContent="end">
+            <Typography variant="body7" marginRight="20%">{contractBUSD} BUSD</Typography>
+          </Grid>
+          
           <Grid
             container
-            // justifyContent="space-between"
+            // justifyContent="end"
             alignItems="center"
           >
             <img src={aprLogo} alt="" height={30}></img>
-            <Typography variant="body1">APR</Typography>
-            <Typography variant="body1" marginLeft="50%">4015%</Typography>
+            <Typography variant="body7">APR</Typography>
+            <Typography variant="body7" marginLeft="50%">4015%</Typography>
           </Grid>
         </Box>
       </CardContent>

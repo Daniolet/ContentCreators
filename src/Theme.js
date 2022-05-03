@@ -8,14 +8,19 @@ const theme = createTheme({
     secondary: {
       main: "#545454",
     },
+    comingsoon: {
+      main: "#7b1c1c",
+      contrastText: "#ffffff",
+    },
     text: {
       primary: "#000000",
+      comingsoon: "#ffffff",
     },
   },
   typography: {
     fontFamily: "Sans-serif",
     body1: {
-      fontSize: 20,
+      fontSize: 24,
       fontWeight: "bolder",
     },
     body2: {
@@ -41,6 +46,10 @@ const theme = createTheme({
     },
     body7: {
       fontSize: 14,
+      fontWeight: "bolder",
+    },
+    body8: {
+      fontSize: 15,
       fontWeight: "bolder",
     },
     allVariants: {
@@ -72,6 +81,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           padding: "12px 24px",
+          paddingRight: "12px",
         },
       },
     },
